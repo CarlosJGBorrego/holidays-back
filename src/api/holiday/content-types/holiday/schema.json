@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "holidays",
+  "info": {
+    "singularName": "holiday",
+    "pluralName": "holidays",
+    "displayName": "Holiday"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "holidays"
+    }
+  }
+}
