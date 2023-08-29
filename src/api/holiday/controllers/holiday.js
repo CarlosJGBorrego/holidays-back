@@ -12,6 +12,11 @@ module.exports = createCoreController("api::holiday.holiday", ({ strapi }) => ({
       .service("api::holiday.holiday")
       .findHolidaysByUserEmail(ctx);
   },
+  async getHolidaysByGroup(ctx) {
+    return await strapi
+      .service("api::holiday.holiday")
+      .findHolidaysByGroup(ctx);
+  },
   async find() {
     return await strapi.service("api::holiday.holiday").findMany();
   },
