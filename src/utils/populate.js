@@ -13,6 +13,9 @@ const archivedPopulate = {
     holiday: {
       populate: "*",
     },
+    userGroups: {
+      populate: "*",
+    },
   },
 };
 let cache = {};
@@ -32,7 +35,8 @@ const populateBuilder = function (strapi, uid) {
         };
       } else if (
         (attribute.type === "relation" || attribute.type === "datetime") &&
-        attribute.target === "plugin::users-permissions.user"
+        (attribute.target === "plugin::users-permissions.user" ||
+          attribute.target === "api::user-group.user-group")
       ) {
         population = archivedPopulate;
       }

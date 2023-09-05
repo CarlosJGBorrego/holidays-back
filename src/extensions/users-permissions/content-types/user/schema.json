@@ -71,18 +71,22 @@
       "target": "api::holiday.holiday",
       "mappedBy": "user"
     },
+    "photo": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "user_groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-group.user-group",
+      "mappedBy": "users"
+    },
     "groups": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::group.group",
       "mappedBy": "users"
-    },
-    "photo": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }
