@@ -36,7 +36,9 @@ const populateBuilder = function (strapi, uid) {
       } else if (
         (attribute.type === "relation" || attribute.type === "datetime") &&
         (attribute.target === "plugin::users-permissions.user" ||
-          attribute.target === "api::user-group.user-group")
+          attribute.target === "api::user-group.user-group" ||
+          attribute.target === "api::group.group" ||
+          attribute.target === "api::holiday.holiday")
       ) {
         population = archivedPopulate;
       }
